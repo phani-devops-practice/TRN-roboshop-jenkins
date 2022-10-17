@@ -5,10 +5,7 @@
     url: "http://jenkins.devopslearner.online:8080"
     user: "admin"
     token: "115f9fa66f82cfd6885ba1916e6395514a"
-  loop:
-    - { name: "CI-Pipelines", description: "CI pipelines for roboshop components" }
-
-
+  loop: "{{folders}}"
 
 - name: Create a jenkins single pipeline
   community.general.jenkins_job:
@@ -17,5 +14,5 @@
     url: "http://jenkins.devopslearner.online:8080"
     user: "admin"
     token: "115f9fa66f82cfd6885ba1916e6395514a"
-  loop:
-    - { jobName: "cart", folderName: "CI-Pipelines/", repoName: "cart", componentName: "cart" }
+  loop: "{{pipelineJobs}}"
+  
