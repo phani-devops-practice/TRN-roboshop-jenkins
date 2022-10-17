@@ -18,4 +18,4 @@
     user: "admin"
     token: "115f9fa66f82cfd6885ba1916e6395514a"
   loop:
-    - { jobName: "cart", folderName: "CI-Pipelines", repoName: "cart", componentName: "cart" }
+    - { jobName: "cart", folderName: "CI-Pipelines/", repoName: "cart", componentName: "cart" }
