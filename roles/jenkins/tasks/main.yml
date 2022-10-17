@@ -1,6 +1,18 @@
-- name: Create a jenkins job using basic authentication
+#- name: Create a jenkins folder
+#  community.general.jenkins_job:
+#    config: "{{ lookup('file', 'folder.xml') }}"
+#    name: "test"
+#    url: "http://jenkins.devopslearner.online:8080"
+#    user: "admin"
+#    token: "115f9fa66f82cfd6885ba1916e6395514a"
+#  loop:
+#    - { repoName: "cart", componentName: "cart" }
+
+
+
+- name: Create a jenkins single pipeline
   community.general.jenkins_job:
-    config: "{{ lookup('file', '/tmp/pipeline.xml') }}"
+    config: "{{ lookup('template', '/tmp/pipeline.xml') }}"
     name: "test"
     url: "http://jenkins.devopslearner.online:8080"
     user: "admin"
