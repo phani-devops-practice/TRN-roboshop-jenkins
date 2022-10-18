@@ -2,9 +2,9 @@ pipeline {
   agent any
 
   parameters {
-    string(name: 'COMPONENT', defaultValue: '', description: 'When Component')
-    string(name: 'ENV', defaultValue: '', description: 'When Env')
-    string(name: 'APP_VERSION', defaultValue: '', description: 'When App version')
+    string(name: 'COMPONENT', defaultValue: '', description: 'Which Component')
+    string(name: 'ENV', defaultValue: '', description: 'Which Env')
+    string(name: 'APP_VERSION', defaultValue: '', description: 'Which App version')
   }
 
   environment {
