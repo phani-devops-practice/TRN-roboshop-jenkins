@@ -3,25 +3,6 @@
     <actions/>
     <description></description>
     <keepDependencies>false</keepDependencies>
-    <properties>
-        <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-            <triggers>
-                <org.jenkinsci.plugins.gwt.GenericTrigger plugin="generic-webhook-trigger@1.85.1">
-                    <spec></spec>
-                    <regexpFilterText></regexpFilterText>
-                    <regexpFilterExpression></regexpFilterExpression>
-                    <printPostContent>false</printPostContent>
-                    <printContributedVariables>false</printContributedVariables>
-                    <causeString>Generic Cause</causeString>
-                    <token>{{item.componentName}}</token>
-                    <tokenCredentialId></tokenCredentialId>
-                    <silentResponse>false</silentResponse>
-                    <overrideQuietPeriod>false</overrideQuietPeriod>
-                    <shouldNotFlattern>false</shouldNotFlattern>
-                </org.jenkinsci.plugins.gwt.GenericTrigger>
-            </triggers>
-        </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-    </properties>
     <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@2802.v5ea_628154b_c2">
         <scm class="hudson.plugins.git.GitSCM" plugin="git@4.12.1">
             <configVersion>2</configVersion>
@@ -39,7 +20,7 @@
             <submoduleCfg class="empty-list"/>
             <extensions/>
         </scm>
-        <scriptPath>Jenkinsfile</scriptPath>
+        <scriptPath>{{item.fileName}}</scriptPath>
         <lightweight>true</lightweight>
     </definition>
     <triggers/>
